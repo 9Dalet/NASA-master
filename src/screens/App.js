@@ -21,7 +21,7 @@ const App = () => {
 
   if (!isLoaded) {
     return (
-      <SplashScreen/>
+      <SplashScreen />
     );
   }
 
