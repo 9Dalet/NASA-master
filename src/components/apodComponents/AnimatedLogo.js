@@ -16,7 +16,8 @@ const AnimatedLogo = ({
     }, []);
     return (
         <LottieView
-            source={shown ? source : undefined}
+            //source={shown ? source : undefined}
+            source={source}
             autoPlay={autoPlay}
             loop={loop}
             loading={loading}

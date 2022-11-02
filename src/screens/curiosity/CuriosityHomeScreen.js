@@ -6,7 +6,7 @@ import CustomHeader from '../../components/CustomHeader';
 import PlaceHolder from '../../components/PlaceHolder';
 import CustomCard from '../../components/curiosityComponents/CustomCard';
 import LoadingAnimation from '../../components/LoadingAnimation';
-
+import AnimatedLogo from '../../components/apodComponents/AnimatedLogo';
 const CuriosityHomeScreen = ({ navigation }) => {
 
     const [data, setData] = useState([]);
@@ -21,13 +21,12 @@ const CuriosityHomeScreen = ({ navigation }) => {
         setLoading(false);
         console.log(data);
         return data.photos; //results è una voce dell'api
-        setLoading(false);
     };
 
     useEffect(() => {
-        
+
         getResponse().then(setData);
-        
+
     }, []);
 
     const renderItem = ({ item }) => (
@@ -40,7 +39,11 @@ const CuriosityHomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#000' }}>
             {loading ? (
-                <LoadingAnimation />
+                <AnimatedLogo
+                    source={require('../../../assets/animation/28514-mars-2020-nasa-mission.json')}
+                    autoPlay
+                    loop
+                    style={{ flex: 1, backgroundColor: 'black' }} />
             ) : (
                 <View >
                     <CustomHeader title="Curiosity Mars Rover Photos" />
