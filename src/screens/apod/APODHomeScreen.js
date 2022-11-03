@@ -7,13 +7,13 @@ import { SimpleAnimation } from 'react-native-simple-animations';
 import CustomHeader from '../../components/CustomHeader';
 import PlaceHolder from '../../components/PlaceHolder';
 import CustomButton from '../../components/apodComponents/CustomButton';
-import AnimatedLogo from '../../components/apodComponents/AnimatedLogo';
+import NASAlogo from '../../components/apodComponents/NASAlogo';
 
 const APODHomeScreen = ({ navigation }) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [loaded, setLoaded] = useState(false);
-
+    
 
     const getResponse = async () => {
         fetch('https://api.nasa.gov/planetary/apod?api_key=bjgTULdgl31q0CeECyxHcgjoBYqdzHERTaBvKbsu', {
@@ -42,7 +42,7 @@ const APODHomeScreen = ({ navigation }) => {
                 </SimpleAnimation>
             </View>
             <View style={{ flex: 1 }}>
-                <AnimatedLogo loading={loading} source={require('../../../assets/animation/76438-telescope.json')} />
+                <NASAlogo loading={loading} />
             </View>
             <View style={{ flex: 1, justifyContent: 'center' }}>
                 <CustomButton onPress={() => {

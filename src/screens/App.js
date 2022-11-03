@@ -21,11 +21,16 @@ const App = () => {
 
   if (!isLoaded) {
     return (
+<<<<<<< HEAD
       <>
         <StatusBar barStyle={'light-content'}/>
         <SplashScreen />
       </>
     )
+=======
+      <SplashScreen/>
+    );
+>>>>>>> parent of 82f68f6 (Fix LottieView on ios)
   }
 
   return (
