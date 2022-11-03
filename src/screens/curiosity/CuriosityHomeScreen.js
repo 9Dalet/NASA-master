@@ -39,11 +39,7 @@ const CuriosityHomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#000' }}>
             {loading ? (
-                <AnimatedLogo
-                    source={require('../../../assets/animation/28514-mars-2020-nasa-mission.json')}
-                    autoPlay
-                    loop
-                    style={{ flex: 1, backgroundColor: 'black' }} />
+                <LoadingAnimation />
             ) : (
                 <View >
                     <CustomHeader title="Curiosity Mars Rover Photos" />

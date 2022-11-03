@@ -1,14 +1,10 @@
 import React from 'react';
-import AnimatedLogo from "../components/apodComponents/AnimatedLogo";
+import { View, StyleSheet } from 'react-native';
+import LottieView from 'lottie-react-native';
 
 const SplashScreen = () => {
   return (
-    <AnimatedLogo
-        source={require('../../assets/animation/24047-nasa-worm-logo.json')}
-        autoPlay
-        loop
-        style={{ flex: 1, backgroundColor: 'black' }}
-    />
+    <LottieView source={require('../../assets/animation/24047-nasa-worm-logo.json')} autoPlay loop style={{ backgroundColor: 'black' }} />
   );
 };
 
