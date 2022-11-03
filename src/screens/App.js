@@ -21,65 +21,61 @@ const App = () => {
 
   if (!isLoaded) {
     return (
-<<<<<<< HEAD
       <>
         <StatusBar barStyle={'light-content'}/>
         <SplashScreen />
       </>
-=======
-      <SplashScreen/>
->>>>>>> parent of 82f68f6 (Fix LottieView on ios)
-    );
+    )
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#191919' }}>
-      <NavigationContainer>
-        <StatusBar barStyle={'light-content'} />
-        <Tab.Navigator
-          initialRouteName="APOD"
-          screenOptions={{
-            tabBarActiveTintColor: "white",
-            headerShown: false,
-            tabBarStyle: { backgroundColor: '#191919', borderTopWidth: 0, height: 60, paddingBottom: 5, overflow: 'hidden', borderTopLeftRadius: 30, borderTopRightRadius: 30, position: 'absolute' },
-            tabBarItemStyle: { backgroundColor: '#191919' },
+    <SafeAreaView style={{flex: 1, backgroundColor: '#191919'}}>
+    <NavigationContainer>
+      <StatusBar barStyle={'light-content'} />
+      <Tab.Navigator
+        initialRouteName="APOD"
+        screenOptions={{
+          tabBarActiveTintColor: "white",
+          headerShown: false,
+          tabBarStyle: { backgroundColor: '#191919', borderTopWidth: 0,  height: 60, paddingBottom: 5, overflow: 'hidden', borderTopLeftRadius: 30, borderTopRightRadius: 30, position: 'absolute' },
+          tabBarItemStyle: {backgroundColor: '#191919'},
+        }}
+      >
+        <Tab.Screen
+          name="APOD"
+          component={APODNavigation}
+          options={{
+            tabBarLabel: 'APOD',
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="motion-photos-on" size={30} color={color} />
+            ),
           }}
-        >
-          <Tab.Screen
-            name="APOD"
-            component={APODNavigation}
-            options={{
-              tabBarLabel: 'APOD',
-              tabBarIcon: ({ color }) => (
-                <MaterialIcons name="motion-photos-on" size={30} color={color} />
-              ),
-            }}
 
-          />
-          <Tab.Screen
-            name="Curiosity"
-            component={CuriosityNavigation}
-            options={{
-              tabBarLabel: 'Curiosity',
-              tabBarIcon: ({ color }) => (
-                <FontAwesome5 name="satellite" size={30} color={color} />
-              ),
-            }}
-          />
+        />
+        <Tab.Screen
+          name="Curiosity"
+          component={CuriosityNavigation}
+          options={{
+            tabBarLabel: 'Curiosity',
+            tabBarIcon: ({ color }) => (
+              <FontAwesome5 name="satellite" size={30} color={color} />
+            ),
+          }}
+        />
 
-          <Tab.Screen
-            name="More"
-            component={MoreHomeScreen}
-            options={{
-              tabBarLabel: 'More',
-              tabBarIcon: ({ color }) => (
-                <Feather name="plus-circle" size={30} color={color} />
-              ),
-            }}
-          />
+        <Tab.Screen
+          name="More"
+          component={MoreHomeScreen}
+          options={{
+            tabBarLabel: 'More',
+            tabBarIcon: ({ color }) => (
+              <Feather name="plus-circle" size={30} color={color} />
+            ),
+          }}
+        />
 
-        </Tab.Navigator>
-      </NavigationContainer>
+      </Tab.Navigator>
+    </NavigationContainer>
     </SafeAreaView>
   );
 }
