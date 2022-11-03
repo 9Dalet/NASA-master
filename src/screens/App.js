@@ -22,12 +22,15 @@ const App = () => {
   if (!isLoaded) {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
       <>
         <StatusBar barStyle={'light-content'}/>
         <SplashScreen />
       </>
     )
 =======
+=======
+>>>>>>> parent of 82f68f6 (Fix LottieView on ios)
       <SplashScreen/>
     );
 >>>>>>> parent of 82f68f6 (Fix LottieView on ios)
