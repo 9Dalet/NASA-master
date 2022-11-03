@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, Text, View, StatusBar } from 'react-native';
 import LottieView from 'lottie-react-native';
 import AnimatedLogo from '../../components/apodComponents/AnimatedLogo';
-import Animation from '../../components/moreComponents/Animation';
 
 const MoreHomeScreen = () => {
     const [loading, setLoading] = useState(true);
@@ -10,7 +9,9 @@ const MoreHomeScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={{ flex: 1 }}>
-                <Animation loading={loading}/>
+                <AnimatedLogo loading={loading} source={require('../../../assets/animation/94691-space.json')} autoPlay
+                    loop
+                    style={{ flex: 1, backgroundColor: 'black' }} />
             </View>
             <View style={{ height: 200 }}>
                 <Text style={styles.text}>Stay Tuned for More Content</Text>
